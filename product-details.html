@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style_sp.css" />
+    <link rel="stylesheet" href="./product-details.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row-navbar">
+          <div class="column-adress">
+            <i class="fa-solid fa-envelope"></i> contact@demo.com
+            <i class="fa-solid fa-location-dot"></i> Số 123, đường Phan Chu
+            Trinh Quận 10, TPHCM
+          </div>
+          <div class="column-contact">
+            <ul>
+              <i class="fa-solid fa-phone-flip"></i>
+              0123 456 789
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </ul>
+          </div>
+        </div>
+        <div class="row-menu">
+          <div class="column-img">
+            <a href="./index.html"><img src="" alt="Logo" /></a>
+          </div>
+
+          <div class="column-menu">
+            <ul>
+              <li><a href="./index.html">TRANG CHỦ</a></li>
+              <li><a href="#">GIỚI THIỆU</a></li>
+              <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+              <li><a href="#">TIN TỨC</a></li>
+              <li><a href="./giohang.html">GIỎ HÀNG</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="product-details"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section logo-section">
+          <p><strong>CÔNG TY TNHH TM DV DV13</strong></p>
+          <p>📍 Số 123 Đường Phan Chu Trinh, Quận 10, TP.HCM</p>
+          <p>📞 0123 456 789</p>
+          <p>📧 contact@demo.com</p>
+        </div>
+        <div class="footer-section links-section">
+          <h3>LIÊN KẾT WEB</h3>
+          <ul>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section news-section">
+          <h3>TIN MỚI NHẤT</h3>
+          <ul>
+            <li><a href="#">Lexus – thể hiện đẳng cấp</a></li>
+            <li><a href="#">Lamborghini – thương hiệu nổi bật</a></li>
+            <li><a href="#">Porsche 911 – chất kích thích</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dữ liệu sản phẩm
+      const products = [
+        {
+          id: 1,
+          name: "AUDI R8",
+          price: 150000,
+          image: "./img/car_max/car1.jpeg",
+          category: "AUDI",
+          description: "Mô tả chi tiết về sản phẩm AUDI R8",
+          material: "Steel and aluminum",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+        {
+          id: 2,
+          name: "McLaren",
+          price: 250000,
+          image: "./img/car_max/car2.jpeg",
+          category: "McLaren",
+          description: "Mô tả chi tiết về sản phẩm McLaren.",
+          material: "Carbon fiber",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+        {
+          id: 3,
+          name: "Lông Bông",
+          price: 40000,
+          image: "./img/car_max/car3.jpeg",
+          category: "Lông Bông",
+          description: "Mô tả chi tiết về sản phẩm Lông Bông.",
+          material: "Fur and fabric",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+        {
+          id: 4,
+          name: "Lamborghini_Aventador",
+          price: 500000,
+          image: "./img/car_max/car4.jpeg",
+          category: "Lamborghini",
+          description: "Mô tả chi tiết về sản phẩm Lamborghini_Aventador.",
+          material: "Carbon fiber and leather",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+        {
+          id: 5,
+          name: "Car Model 5",
+          price: 600000,
+          image: "./img/car_max/car5.jpeg",
+          category: "Car Category",
+          description: "Mô tả chi tiết về sản phẩm Car Model 5.",
+          material: "Aluminum and glass",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+        {
+          id: 6,
+          name: "Car Model 6",
+          price: 700000,
+          image: "./img/car_max/car6.jpeg",
+          category: "Car Category",
+          description: "Mô tả chi tiết về sản phẩm Car Model 6.",
+          material: "Steel and plastic",
+          imgDesc1: "./img/car_max/audi1.png",
+          imgDesc2: "./img/car_max/audi2.png",
+          imgDesc3: "./img/car_max/audi3.png",
+          imgDesc4: "./img/car_max/audi4.png",
+        },
+      ];
+
+      // Hàm lấy ID sản phẩm từ URL
+      function getProductIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("id");
+      }
+
+      // Tìm sản phẩm theo ID
+      function getProductById(id) {
+        return products.find((product) => product.id == id);
+      }
+
+      // Hiển thị chi tiết sản phẩm
+      function renderProductDetails() {
+        const productId = getProductIdFromUrl();
+        const product = getProductById(productId);
+
+        if (product) {
+          const productDetailsHTML = `
+                  <div class = "product-group">
+                      <div class="product-image">
+                          <img src="${product.image}" alt="${product.name}">
+
+                          <div class="product-image_more">
+                            <figure>
+                              <img src="${product.imgDesc1}" alt="${
+            product.name
+          }">
+                            </figure>  
+                            <figure>
+                              <img src="${product.imgDesc2}" alt="${
+            product.name
+          }">
+                            </figure>  
+                            <figure>
+                              <img src="${product.imgDesc3}" alt="${
+            product.name
+          }">
+                            </figure>  
+                            <figure>
+                              <img src="${product.imgDesc4}" alt="${
+            product.name
+          }">
+                            </figure>  
+                          </div>
+                      </div>
+
+
+                      <div class="product-desc">
+                          <div class="product-info">
+                              <h2 class="poppins-semibold ">${product.name}</h2>
+                              <p class= "poppins-regular">${
+                                product.description
+                              }</p>
+                              <p class= "poppins-regular"><strong>Giá:</strong> ${product.price.toLocaleString()} $</p>
+
+                              <div class="product-mt">
+                                  <h4 class="poppins-regular">Thông số sản phẩm</h4>
+                                  
+                                  <ul class="product-list">
+                                      <li>Loại: ${product.category}</li>
+                                      <li>Chât liệu: ${product.material}</li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="product-btn-action">
+                              <button class="btn-buy"><span class="poppins-bold ">Mua ngay</span></button>
+                              <button class="btn-add-to-cart"><span class="poppins-bold">them vào gio hang</span></button>
+                          </div>
+                      </div>
+
+                      <div class="product-sec">
+                          <div class="product-cs">
+                              <p class="product-title">Chính sách mua hàng</p>
+                              <ul class="product-sec-list">
+                                  <li>
+                                    <i class="fa-solid fa-cart-shopping-fast"></i>
+                                    <span> Thanh toán thuận tiện</span></li>
+                                  <li>
+                                    <i class="fa-light fa-shield-check"></i>
+                                    <span>Sản phẩm 100% chính hãng</span></li>
+                                  <li>
+                                    <i class="fa-light fa-box"></i>
+                                    <span>Bảo hành nhanh chóng</span></li>
+                                  <li>
+                                  <i class="fa-solid fa-truck-fast"></i>
+                                    <span>Giao hàng toàn quốc</span></li>
+                              </ul>  
+                          </div>
+
+                          <div class="product-cs">
+                              <p class="product-title">HOTLINE</p>
+                              <ul class="product-sec-list">
+                                  <li>
+                                    <i class="fa-light fa-phone-volume"></i>
+                                    <span>Hotline CSKH: 01234567</span></li>
+                                  <li>
+                                   <i class="fa-light fa-phone-volume"></i>
+                                    <span>Tư vấn mua hàng: 01234567</span></li>
+                              </ul>  
+                          </div>
+                      </div>
+
+                  </div>
+                   
+                  <div class ="product_group-dg">
+                    <div class="product-dg">
+                        <div class="product-menu">
+                          <p class="poppins-regular highlight">Đặc điểm</p>
+                          <p class="poppins-regular">Đánh giá</p>  
+                        </div>
+                        <div class="product-content">
+                          <p class= "product-content_text-update poppins-regular">Đang cập nhập...!</p>
+
+
+                          <div class="product-rate">
+                              <p class= "product-rate-text poppins-regular">Đánh giá sản phẩm</p>
+                              
+                              <div class="product-rate_content">
+                                  <figure class="product-rate-content_avatar">
+                                     <img src="./img/car_max/avatar.jpg" alt="User Avatar">
+                                  </figure>
+
+                                 <form class ="product-rate_content_text">
+                                   <input class="product-rate-content_textra" placeholder ="Nội dung" />
+                                  
+                                  <div class="product-rate_content-user">
+                                    <p>Đánh giá:</p>
+
+                                    <div class="product-rate_content-star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                                    </div>
+                                    
+                                  
+                                  </div>
+                                     <div class="product-options-input">
+                                        <input type="text" placeholder="Tên (bắt buộc)">
+                                        <input type="text" placeholder="Email (bắt buộc)">
+                                    </div>
+                                    <div class="product-option-btn"> <button class ="btn_send"><span>GỬI ĐI</span></button></div>
+                                  </form>
+
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="product_more-same-list">
+                      <div class="product_more-same">
+                        <p class="product_more-same-title">  SẢN PHẨM TƯƠNG TỰ</p>  
+
+                        <div class="product_item-same">
+                            <figure class="product_item-same-img">
+                              <img src="./img/car_max/audi1.png" />  
+                            </figure>  
+
+                            <div class="product_item-same-info">
+                              <div class="product_item-same-name">
+                                  <p>Mã : GC8123</p> 
+                                  <span>Còn hàng</span>  
+                              </div>
+                              <p class="product_item-same-title poppins-regular">Tên: BNW</p>
+                              
+                              <div class="product_item-same-buy-group">
+                                <div class="product_item-same-buy">
+                                    <p class ="poppins-light sale">500.000đ</p>
+                                    <p class="poppins-light newSale">1.999.000đ</p>  
+                                </div>  
+
+                                <figure class="product_item-same-buy-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                                </figure> 
+
+                              </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product_more-same">
+                        <p class="product_more-same-title">  SẢN PHẨM TƯƠNG TỰ</p>  
+
+                        <div class="product_item-same">
+                            <figure class="product_item-same-img">
+                              <img src="./img/car_max/audi1.png" />  
+                            </figure>  
+
+                            <div class="product_item-same-info">
+                              <div class="product_item-same-name">
+                                  <p>Mã : GC8123</p> 
+                                  <span>Còn hàng</span>  
+                              </div>
+                              <p class="product_item-same-title poppins-regular">Tên: BNW</p>
+                              
+                              <div class="product_item-same-buy-group">
+                                <div class="product_item-same-buy">
+                                    <p class ="poppins-light sale">500.000đ</p>
+                                    <p class="poppins-light newSale">1.999.000đ</p>  
+                                </div>  
+
+                                <figure class="product_item-same-buy-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                                </figure> 
+
+                              </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="product_more-same">
+                        <p class="product_more-same-title">  SẢN PHẨM TƯƠNG TỰ</p>  
+
+                        <div class="product_item-same">
+                            <figure class="product_item-same-img">
+                              <img src="./img/car_max/audi1.png" />  
+                            </figure>  
+
+                            <div class="product_item-same-info">
+                              <div class="product_item-same-name">
+                                  <p>Mã : GC8123</p> 
+                                  <span>Còn hàng</span>  
+                              </div>
+                              <p class="product_item-same-title poppins-regular">Tên: BNW</p>
+                              
+                              <div class="product_item-same-buy-group">
+                                <div class="product_item-same-buy">
+                                    <p class ="poppins-light sale">500.000đ</p>
+                                    <p class="poppins-light newSale">1.999.000đ</p>  
+                                </div>  
+
+                                <figure class="product_item-same-buy-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                                </figure> 
+
+                              </div>
+
+                            </div>
+                        </div>
+
+                        <div class="product_more-same">
+                        <p class="product_more-same-title">  SẢN PHẨM TƯƠNG TỰ</p>  
+
+                        <div class="product_item-same">
+                            <figure class="product_item-same-img">
+                              <img src="./img/car_max/audi1.png" />  
+                            </figure>  
+
+                            <div class="product_item-same-info">
+                              <div class="product_item-same-name">
+                                  <p>Mã : GC8123</p> 
+                                  <span>Còn hàng</span>  
+                              </div>
+                              <p class="product_item-same-title poppins-regular">Tên: BNW</p>
+                              
+                              <div class="product_item-same-buy-group">
+                                <div class="product_item-same-buy">
+                                    <p class ="poppins-light sale">500.000đ</p>
+                                    <p class="poppins-light newSale">1.999.000đ</p>  
+                                </div>  
+
+                                <figure class="product_item-same-buy-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                                </figure> 
+
+                              </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product_more-same">
+                        <p class="product_more-same-title">  SẢN PHẨM TƯƠNG TỰ</p>  
+
+                        <div class="product_item-same">
+                            <figure class="product_item-same-img">
+                              <img src="./img/car_max/audi1.png" />  
+                            </figure>  
+
+                            <div class="product_item-same-info">
+                              <div class="product_item-same-name">
+                                  <p>Mã : GC8123</p> 
+                                  <span>Còn hàng</span>  
+                              </div>
+                              <p class="product_item-same-title poppins-regular">Tên: BNW</p>
+                              
+                              <div class="product_item-same-buy-group">
+                                <div class="product_item-same-buy">
+                                    <p class ="poppins-light sale">500.000đ</p>
+                                    <p class="poppins-light newSale">1.999.000đ</p>  
+                                </div>  
+
+                                <figure class="product_item-same-buy-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+                                </figure> 
+
+                              </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                  </div>
+                    </div>
+
+                    </div>
+
+                    </div>
+
+                    </div>
+
+              
+              <div class="footer_item">
+                  <h2 class="poppins-bold ">Tin tức & Sự kiện</h2>  
+                  <p class="poppins-regular">Cập nhập thông tin công nghệ từ TimeLine</p>
+
+                  <div class="footer_item--list">
+                    <figure class="footer_item-img">
+                        <img src ="./img/car_max/audi1.png" />
+                    </figure>  
+
+                     <figure class="footer_item-img">
+                        <img src ="./img/car_max/audi2.png" />
+                    </figure>  
+
+                     <figure class="footer_item-img">
+                        <img src ="./img/car_max/audi4.png" />
+                    </figure>  
+                  </div>
+              </div>
+                `;
+          document.getElementById("product-details").innerHTML =
+            productDetailsHTML;
+        } else {
+          document.getElementById("product-details").innerHTML =
+            "Sản phẩm không tìm thấy.";
+        }
+      }
+
+      // Gọi hàm render khi trang tải
+      window.onload = renderProductDetails;
+    </script>
+  </body>
+</html>
+
+<!-- 
+ <div class="product-info">
+                        <h2>${product.name}</h2>
+                        <p>${product.description}</p>
+                        <p><strong>Giá:</strong> ${product.price.toLocaleString()} $</p>
+                    </div> -->

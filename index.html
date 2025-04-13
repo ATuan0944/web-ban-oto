@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web bán xe</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style_sp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row-navbar">
+                <div class="column-adress">
+                    <i class="fa-solid fa-envelope"></i> contact@demo.com
+                    <i class="fa-solid fa-location-dot"></i> Số 123, đường Phan Chu Chinh Quận 10 , TPHCM
+                </div>
+                <div class="column-contact">
+                    <ul>
+                        <i class="fa-solid fa-phone-flip"></i> 0123 456 789
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </ul>
+                </div>
+            </div>
+            <div class="row-menu">
+                <div class="column-img">
+                    <a href=""><img src="" alt=""></a>
+                </div>
+                <div class="column-menu">
+                    <ul>
+                        <li><a href="./index.html">TRANG CHỦ</a></li>
+                        <li><a href="">GIỚI THIỆU</a></li>
+                        <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+                        <li><a href="">TIN TỨC</a></li>
+                        <li><a href="./giohang.html">GIỎ HÀNG</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row-text">
+            <div class="column-p">
+                <span>Chào mừng đến với websize</span>
+                <h1>WEB BÁN XE</h1>
+                <p>
+                    Chúng tôi có cung cấp cho quý khách dịch vụ test xe ô tô cũ uy tín và chất lượng trên toàn quốc. Một
+                    hôm
+                    lang thang trên mạng và may mắn bắt gặp một <br> chiếc xe cũ đúng loại mình đang tìm kiếm, nhìn
+                    ngoại
+                    thất có vẻ rất mới và sang trọng nhưng không biết động cơ có tốt hay không mà bạn thì lại <br> không
+                    có
+                    kinh nghiệm trong việc này. Mình rất hài lòng.</p>
+            </div>
+            <div class="column-icon">
+                <div class="column-1">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>BẢO MẬT CAO</h4>
+                    <p>Với hệ thông khóa cao cấp, xe luôn trong <br> tình trạng an toàn.</p>
+                </div>
+                <div class="column-1">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <h4>ĐÁNG TIN CẬY</h4>
+                    <p>Bao gồm những thương hiệu ô tô đáng <br> tin cậy nhất thế giới.</p>
+                </div>
+                <div class="column-1">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h4>GIÁ TỐT NHẤT</h4>
+                    <p>Vâng, khẳng định một lần nữa, ở đâu mua <br> giá cao, chúng tôi mua giá cao hơn.</p>
+                </div>
+                <div class="column-1">
+                    <i class="fa-solid fa-headset"></i>
+                    <h4>HỖ TRỢ MIỄN PHÍ</h4>
+                    <p>Với chế độ bảo hành miễn phí cho những <br> thành viên VIP, hãy đến với chúng tôi.</p>
+                </div>
+            </div>
+
+            <div class="row-number">
+                <div class="column-cauhoi">
+                    <h3>CÓ BẤT KỲ CÂU HỎI NÀO?</h3>
+                    <span>0123 456 789</span>
+                </div>
+            </div>
+        </div>
+        <div class="product-contain">
+            <div class="row-product">
+                <div class="column-span">
+                    <span>Sản phẩm của chúng tôi</span>
+                    <h1>SẢN PHẨM MỚI</h1>
+                </div>
+            </div>
+            <div class="column-product" id="product-list">
+                <script>
+                    // Dữ liệu sản phẩm
+                    const products = [
+                        { id: 1, name: "Vinfast_F7", price: 150000, image: "./img/Vinfast1_vf7.jpg" },
+                        { id: 2, name: "MCLaren", price: 250000, image: "./img/anh1.jpg" },
+                        { id: 3, name: "Vinfast_F8", price: 500000, image: "./img/Vinfast1_vf8.jpg" },
+                        { id: 3, name: "Vinfast_F8", price: 500000, image: "./img/Vinfast1_vf8.jpg" }
+                    ];
+
+                    // Hàm render danh sách sản phẩm
+                    function renderProducts() {
+                        const productList = document.getElementById("product-list");
+                        products.forEach(product => {
+                            const productHTML = `
+                    <div class="column-tab">
+                        <div class="column-3">
+                        <div class="column-3-img">
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="olumn-3-text">
+                            <p>${product.name}</p>
+                        </div>
+                        <div class="gia">
+                            <span>${product.price.toLocaleString()} VND</span>
+                        </div>
+                        
+                    </div>
+                    </div>
+                `;
+                            productList.innerHTML += productHTML;
+                        });
+                    }
+
+                    // Hàm xử lý khi bấm nút "THÊM GIỎ HÀNG"
+                    function mua(productName) {
+                        alert(`Bạn đã thêm "${productName}" vào giỏ hàng!`);
+                    }
+
+                    // Gọi hàm render khi trang được tải
+                    renderProducts();
+                </script>
+                <!-- <div class="column-tab">
+                    <div class="column-3">
+                        <div class="column-3-img">
+                            <img src="./img/anh1.jpg" alt="">
+                        </div>
+                        <div class="column-3-text">
+                            <p>bmw e46 m3 double</p>
+                            <span>450,000,000đ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-tab">
+                    <div class="column-3">
+                        <div class="column-3-img">
+                            <img src="./img/anh2.jpg" alt="">
+                        </div>
+                        <div class="column-3-text">
+                            <p>Ferrari red car one</p>
+                            <span>500,000,000đ</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column-tab">
+                    <div class="column-3">
+                        <div class="column-3-img">
+                            <img src="./img/anh3.jpg" alt="">
+                        </div>
+                        <div class="column-3-text">
+                            <p>Porsche cayen last</p>
+                            <span>495,000,000đ</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column-tab">
+                    <div class="column-3">
+                        <div class="column-3-img">
+                            <img src="./img/anh4.jpg" alt="">
+                        </div>
+                        <div class="column-3-text">
+                            <p> Volkswagen scrirocco 2016</p>
+                            <span>500,000,000đ</span>
+                        </div>
+                    </div>
+
+                </div> -->
+            </div>
+        </div>
+
+        <div class="row-contact">
+            <div class="column-contact">
+                <div class="column-h1">
+                    <h1>TIN TỨC MỚI</h1>
+                    <hr style="width: 15%;">
+                </div>
+                <!-- <div class="contact-img">
+                    <img src="./img/anh1.jpg" alt="">
+                </div> -->
+                <div class="contact-text">
+                    <img src="./img/anh1.jpg" alt="">
+                    <div class="texxt">
+                        <a href="#">LEUXUS-THỂ HIỆN SỰ SANG TRỌNG</a>
+                        <h4>03 TH4 2021 | HỮU TIẾN</h4>
+                        <p>Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang
+                            phục vụ cho in ấn.
+                            Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm
+                            1500,khi một họa
+                            sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản
+                            này không những
+                            đã tồn tại năm thế kỉ,mà khi được áp dụng vào tin học văn phòng,nội dung của nó vẫn không hề
+                            bị thay đổi...</p>
+                        <button>XEM THÊM</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <img src="img/" alt="Logo" class="logo">
+                <p>Web bán xe có cung cấp cho quý khách dịch vụ test xe ô tô cũ uy tín và chất lượng trên toàn quốc...
+                </p>
+                <p><strong>CÔNG TY TNHH TM DV DV13</strong></p>
+                <p>📍 Số 123 Đường Phan Chu Trinh, Quận 10, TP.HCM</p>
+                <p>📞 0123 456 789</p>
+                <p>📧 contact@demo.com</p>
+            </div>
+            <div class="footer-section links-section">
+                <h3>LIÊN KẾT WEB</h3>
+                <ul>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section news-section">
+                <h3>TIN MỚI NHẤT</h3>
+                <ul>
+                    <li><a href="#">Lexus – thể hiện đẳng cấp <span>03 Th4 2021</span></a></li>
+                    <li><a href="#">Lamborghini – thương hiệu nổi bật <span>03 Th4 2021</span></a></li>
+                    <li><a href="#">Porsche 911 – chất kích thích <span>02 Th4 2021</span></a></li>
+                </ul>
+            </div>
+            <div class="footer-section fanpage-section">
+                <h3>FANPAGE</h3>
+                <div class="facebook-widget">
+                    <img src="" alt="Facebook Widget">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

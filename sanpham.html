@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style_sp.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="row-navbar">
+          <div class="column-adress">
+            <i class="fa-solid fa-envelope"></i> contact@demo.com
+            <i class="fa-solid fa-location-dot"></i> Số 123, đường Phan Chu
+            Trinh Quận 10, TPHCM
+          </div>
+          <div class="column-contact">
+            <ul>
+              <i class="fa-solid fa-phone-flip"></i>
+              0123 456 789
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </ul>
+          </div>
+        </div>
+        <div class="row-menu">
+          <div class="column-img">
+            <a href="./index.html"><img src="" alt="Logo" /></a>
+          </div>
+          <div class="column-menu">
+            <ul>
+              <li><a href="./index.html">TRANG CHỦ</a></li>
+              <li><a href="#">GIỚI THIỆU</a></li>
+              <li><a href="./sanpham.html">SẢN PHẨM</a></li>
+              <li><a href="#">TIN TỨC</a></li>
+              <li><a href="./giohang.html">GIỎ HÀNG</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="row-col1">
+        <div class="aslide">
+          <div class="dmsp">
+            <h4>Danh mục sản phẩm</h4>
+          </div>
+          <div class="aslide">
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  onclick="filterProducts('Lamborghini'); return false;"
+                  >Lamborghini</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="filterProducts('McLaren'); return false;"
+                  >McLaren</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="filterProducts('Vinfast'); return false;"
+                  >Vinfast</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="filterProducts('Lông Bông'); return false;"
+                  >Lông Bông</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="filterProducts('all'); return false;"
+                  >Tất cả</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="menu22">
+        <div class="menu" id="product-list"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section logo-section">
+          <p><strong>CÔNG TY TNHH TM DV DV13</strong></p>
+          <p>📍 Số 123 Đường Phan Chu Trinh, Quận 10, TP.HCM</p>
+          <p>📞 0123 456 789</p>
+          <p>📧 contact@demo.com</p>
+        </div>
+        <div class="footer-section links-section">
+          <h3>LIÊN KẾT WEB</h3>
+          <ul>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section news-section">
+          <h3>TIN MỚI NHẤT</h3>
+          <ul>
+            <li><a href="#">Lexus – thể hiện đẳng cấp</a></li>
+            <li><a href="#">Lamborghini – thương hiệu nổi bật</a></li>
+            <li><a href="#">Porsche 911 – chất kích thích</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Product Data
+      const products = [
+        {
+          id: 1,
+          name: "Vinfast_F7",
+          price: 150000,
+          image: "./img/car_max/car1.jpeg", // updated to car1
+          category: "Vinfast",
+        },
+        {
+          id: 2,
+          name: "McLaren",
+          price: 250000,
+          image: "./img/car_max/car2.jpeg", // updated to car2
+          category: "McLaren",
+        },
+        {
+          id: 3,
+          name: "Lông Bông",
+          price: 40000,
+          image: "./img/car_max/car3.jpeg", // updated to car3
+          category: "Lông Bông",
+        },
+        {
+          id: 4,
+          name: "Lamborghini_Aventador",
+          price: 500000,
+          image: "./img/car_max/car4.jpeg", // updated to car4
+          category: "Lamborghini",
+        },
+        {
+          id: 5,
+          name: "Car Model 5",
+          price: 600000,
+          image: "./img/car_max/car5.jpeg", // added car5
+          category: "Car Category",
+        },
+        {
+          id: 6,
+          name: "Car Model 6",
+          price: 700000,
+          image: "./img/car_max/car6.jpeg", // added car6
+          category: "Car Category",
+        },
+      ];
+
+      // Render Products
+      function renderProducts(productList) {
+        const productContainer = document.getElementById("product-list");
+        productContainer.innerHTML = ""; // Clear existing content
+        productList.forEach((product) => {
+          const productHTML = `
+                    <div class="menu1">
+                        <div class="img">
+                            <a href="./product-details.html?id=${product.id}">
+                                <img src="${product.image}" alt="${
+            product.name
+          }">
+                            </a>
+                        </div>
+                        <div class="ten">
+                            <p>${product.name}</p>
+                        </div>
+                        <div class="gia">
+                            <span>${product.price.toLocaleString()} $</span>
+                        </div>
+                        <div class="shop">
+                            <button onclick="addToCart(${
+                              product.id
+                            })">THÊM GIỎ HÀNG</button>
+                        </div>
+                    </div>
+                `;
+          productContainer.innerHTML += productHTML;
+        });
+      }
+
+      // Filter Products
+      function filterProducts(category) {
+        const filteredProducts =
+          category === "all"
+            ? products
+            : products.filter((product) => product.category === category);
+        renderProducts(filteredProducts);
+      }
+
+      // Add to Cart
+      function addToCart(productId) {
+        const product = products.find((item) => item.id === productId);
+        alert(`Added "${product.name}" to cart!`);
+      }
+
+      // Initial Render
+      renderProducts(products);
+    </script>
+  </body>
+</html>

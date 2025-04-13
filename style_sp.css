@@ -1,0 +1,468 @@
+.imganimation {
+    position: relative;
+    animation-name: colorr;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    left: 30px; 
+}
+table{
+    width: 100%;
+    height: 50px;
+  }
+  tr{
+    height: 50px;
+  }
+@keyframes colorr {
+    0% {
+        background-color: aqua;
+    }
+    20%{
+        background-color: aqua;
+    }
+    40% {
+        background-color: yellow;
+    }
+    60%{
+        background-color: blueviolet;
+    }
+    80% {
+        background-color:  orange;
+    }
+    100% {
+        background-color: pink ;
+    }
+    
+} 
+article {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: #a481ff;
+    background-color: #a581ff5b;
+    box-shadow: 0px 0px 70px 15px #a481ff;
+    -webkit-box-shadow: 0px 0px 70px 15px #a481ff;
+    -moz-box-shadow: 0px 0px 70px 15px #a481ff;
+}
+
+header img {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    position: relative;
+    top: 10px;
+    left: 25px;
+}
+
+nav ul {
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    max-width: 8%;
+    margin: 20px;
+    float: right;
+    font-size: large;
+    text-align: center;
+    color: white;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: #a481ff;
+    background-color: #a581ff5b;
+    box-shadow: 0px 0px 70px 15px #a481ff;
+    -webkit-box-shadow: 0px 0px 70px 15px #a481ff;
+    -moz-box-shadow: 0px 0px 70px 15px #a481ff;
+}
+
+.navbar {
+    width: 15%;
+    height: 432px;
+    background-color: white;
+    float: left;
+    display: flex;
+}
+
+.tendm {
+    background-color: black;
+    margin-left: 35px;
+    color: white;
+    height: 30px;
+    font-weight: bold;
+
+}
+.danhmuc{
+   grid-template-columns: 8fr;
+   width: 100%;
+}
+.danhmuc ul li {
+    list-style-type: none;
+    margin: 25px;
+    
+}
+
+.danhmuc ul li a {
+    text-decoration: none;
+    margin-left: 0px;
+    color: black;
+    font-size: 15px;
+}
+
+.row-img {
+    display: flex;
+    width: 85%;
+    float: left;
+    height: 432px;
+}
+
+.ngang {
+    color: rgb(0, 0, 0);
+}
+
+.sp {
+    margin-top: 25px;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.sp1 {
+    margin: auto;
+    border: 1px solid rgb(235, 80, 80);
+    width: 12%;
+    height: 100px;
+}
+
+.sp1>.imgg>img {
+    width: 100%;
+    margin: auto;
+    height: 98px;
+}
+
+.menu {
+    margin-top: 25px;
+    gap: 15px;
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: white; */
+}
+
+.menu :hover .shop {
+    visibility: visible;
+    opacity: 100;
+}
+
+.menu1 {
+    width: 23%;
+    min-height: 350px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.menu1>.ten {
+    display: flex;
+    cursor: pointer;
+    font-size:16px ;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.menu1>.ten :hover {
+    color: blue;
+}
+
+.menu1 img {
+    margin-top: 25px;
+    width: 80%;
+    height: 195px;
+    transition: 0.4s;
+    background-color: whitesmoke;
+}
+
+.menu1>.img img:hover {
+    transform: translateY(-10px) rotate(0deg);
+    transition: 0.6s;
+    border: 1px black;
+    -webkit-box-shadow: 0px 0px 10px 50px rgba(50, 50, 52, 0.62);
+    -moz-box-shadow: 0px 0px 10px 50px rgba(50, 50, 52, 0.62);
+    box-shadow: 0px 0px 5px 5px rgba(50, 50, 52, 0.62);
+}
+
+.menu1>.img>p {
+    display: flex;
+    margin-left: 5px;
+    color: #CCC;
+    transition: 0.4s;
+}
+
+.menu1>input {
+    width: 8%;
+}
+
+.menu1>.gia {
+    font-size: 18px;
+    display: flex;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.but :hover {
+    transform: scale(1.1);
+    color: violet;
+}
+
+.img :hover {
+    transform: scale(0.9);
+}
+.name {
+    margin-top: 5px;
+    color: rgb(0, 0, 0);
+}
+.p {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: orangered;
+    width: 16% auto;
+    text-align: center;
+    font-size: 30px;
+}
+.fa {
+    float: left;
+    font-size: 20px;
+}
+
+.shop {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.shop a {
+    text-decoration: none;
+    display: flex;
+    margin-left: 26px;
+}
+
+.shop a button {
+    width: 55%;
+    height: 25px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.shop button:hover {
+    color: white;
+    background-color: black;
+}
+
+.menu :hover .shop {
+    margin-top: -25px;
+}
+
+.menu22 {
+    margin-top: 25px;
+    gap: 15px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.row-col1 {
+    width: 20%;
+    float: left;
+    position: sticky;
+    top: 0px;
+    right: 0px;
+
+}
+
+.aslide {
+    width: 80%;
+    min-height: 250px;
+}
+
+.aslide ul li a {
+    font-size: larger;
+    text-decoration: none;
+    margin: 15px;
+    padding: 5px;
+    color: black;
+
+
+}
+
+.aslide ul li :hover {
+    color: blue;
+}
+
+.aslide ul li {
+    list-style-type: none;
+    margin: 13px;
+    border-bottom: 1px solid black;
+}
+
+.dmsp h4 {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 25px;
+    padding: 5px;
+}
+
+.img a img{
+    object-fit: cover;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet: max-width 1024px */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        float: none;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .row-img {
+        width: 100%;
+        float: none;
+        flex-direction: column;
+    }
+
+    .sp {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sp1 {
+        width: 40%;
+        margin-bottom: 20px;
+    }
+
+    .menu1 {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .row-col1 {
+        width: 100%;
+        position: static;
+    }
+
+    .menu22 {
+        width: 100%;
+    }
+
+    .aslide {
+        width: 100%;
+        margin: auto;
+    }
+
+    nav ul li {
+        float: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+}
+
+/* Mobile: max-width 768px */
+@media screen and (max-width: 768px) {
+    header img {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        position: static;
+    }
+
+    nav ul {
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sp1 {
+        width: 80%;
+    }
+
+    .menu1 {
+        width: 90%;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu22 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shop a {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .shop a button {
+        width: 80%;
+    }
+
+    .imganimation {
+        left: 0;
+    }
+
+    .p {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .menu1>.ten {
+        margin-left: 10px;
+        justify-content: center;
+    }
+
+    .menu1>.gia {
+        margin-left: 10px;
+        justify-content: center;
+    }
+}
